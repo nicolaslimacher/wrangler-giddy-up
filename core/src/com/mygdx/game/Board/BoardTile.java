@@ -2,7 +2,6 @@ package com.mygdx.game.Board;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -10,7 +9,6 @@ import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
-import com.mygdx.game.HUD.MoveCard;
 import com.mygdx.game.Utils.Constants;
 import com.mygdx.game.Utils.Helpers;
 import com.mygdx.game.Utils.IntPair;
@@ -22,7 +20,7 @@ public class BoardTile extends Actor {
     private final TextureRegion boardTileTextureRegion;
 
     public BoardTile(float positionX, float positionY, IntPair coordinates) {
-        this.boardTileTextureRegion = Helpers.getResourceManager().get("texturePacks/battleTextures.atlas", TextureAtlas.class).findRegion("light_internal");
+        this.boardTileTextureRegion = Helpers.getAssetManager().get("texturePacks/battleTextures.atlas", TextureAtlas.class).findRegion("light_internal");
         this.coordinates = coordinates;
         setBounds(boardTileTextureRegion.getRegionX(), boardTileTextureRegion.getRegionY(),
                 (int) Constants.TILE_SIZE, (int) Constants.TILE_SIZE);

@@ -1,4 +1,14 @@
 {
+	BitmapFont: {
+		default-font: { file: Grenze-standard.dat, scaledSize: 14 },
+		Grenze20: { file: Grenze-standard.dat, scaledSize: 20 },
+		Grenze30: { file: Grenze-standard.dat, scaledSize: 30 },
+		Grenze40: { file: Grenze-standard.dat, scaledSize: 40 },
+		il-grinta16: { file: il_grinta-standard.dat, scaledSize: 16},
+		il-grinta32: { file: il_grinta-standard.dat, scaledSize: 32},
+		il-grinta68: { file: il_grinta-standard.dat, scaledSize: 68}
+
+	},
 	Color: {
 		green: { a: 1, b: 0, g: 1, r: 0 },
 		white: { a: 1, b: 1, g: 1, r: 1 },
@@ -14,8 +24,8 @@
 		toggle: { parent: default, checked: default-round-down }
 	},
 	TextButtonStyle: {
-		default: { font: jaini20, fontColor: black, disabledFontColor: gray, up: default-round, down: default-round-down },
-		jaini-small: { parent: default, font: jaini16, fontColor: white, disabledFontColor: gray },
+		default: { font: default-font, fontColor: black, disabledFontColor: gray, up: default-round, down: default-round-down },
+		jaini-small: { parent: default, font: Grenze20, fontColor: white, disabledFontColor: gray },
 		toggle: { parent: default, checked: default-round-down, downFontColor: red }
 	},
 	ScrollPaneStyle: {
@@ -23,9 +33,9 @@
 	},
 	SelectBoxStyle: {
 		default: {
-			font: jaini20, fontColor: white, background: default-select,
+			font: default-font, fontColor: white, background: default-select,
 			scrollStyle: default,
-			listStyle: { font: jaini20, selection: default-select-selection }
+			listStyle: { font: default-font, selection: default-select-selection }
 		}
 	},
 	SplitPaneStyle: {
@@ -33,7 +43,7 @@
 		default-horizontal: { handle: default-splitpane }
 	},
 	WindowStyle: {
-		default: { titleFont: jaini20, background: default-window, titleFontColor: white },
+		default: { titleFont: default-font, background: default-window, titleFontColor: white },
 		dialog: { parent: default, stageBackground: dialogDim }
 	},
 	ProgressBarStyle: {
@@ -45,39 +55,39 @@
 		default-vertical: { parent: default-vertical }
 	},
 	LabelStyle: {
-		default: { font: il_grinta20, fontColor: white },
-		moveCardConfirmation: { font: il_grinta20, fontColor: black },
-		moveCardSelect: { font: il_grinta20, fontColor: black },
+		default: { font: default-font, fontColor: white },
+		moveCardConfirmation: { font: Grenze40, fontColor: black },
+		moveCardSelect: { font: Grenze30, fontColor: black },
 		small: {
-			font: jaini16, fontColor: white
+			font: Grenze20, fontColor: white
 		},
 		large: {
-			font: jaini16, fontColor: white
+			font: Grenze20, fontColor: white
 		},
 		friendlyHpStatsLabel: {
-			font: jaini16, fontColor: black, background: green_hp_background
+			font: default-font, fontColor: black, background: green_hp_background
 		},
 		enemyHpStatsLabel: {
-			font: jaini16, fontColor: white, background: red_hp_background
+			font: default-font, fontColor: white, background: red_hp_background
 		},
 		atkStatsLabel: {
-			font: jaini16, fontColor: black, background: atk_background
+			font: default-font, fontColor: black, background: atk_background
 		},
 		headerDisplayMessage: {
-			font: il_grinta96, fontColor: white
+			font: il-grinta68, fontColor: white
 		},
 		subDisplayMessage: {
-			font: il_grinta60, fontColor: white
+			font: il-grinta32, fontColor: white
 		}
 	},
 	TextFieldStyle: {
-		default: { selection: selection, background: textfield, font: il_grinta20, fontColor: white, cursor: cursor }
+		default: { selection: selection, background: textfield, font: Grenze30, fontColor: white, cursor: cursor }
 	},
 	CheckBoxStyle: {
-		default: { checkboxOn: check-on, checkboxOff: check-off, font: jaini16, fontColor: white }
+		default: { checkboxOn: check-on, checkboxOff: check-off, font: default-font, fontColor: white }
 	},
 	ListStyle: {
-		default: { fontColorUnselected: white, selection: selection, fontColorSelected: white, font: jaini16 }
+		default: { fontColorUnselected: white, selection: selection, fontColorSelected: white, font: default-font }
 	},
 	TouchpadStyle: {
 		default: { background: default-pane, knob: default-round-large }
@@ -87,7 +97,7 @@
 	},
 	TextTooltipStyle: {
 		default: {
-			label: { font: jaini16, fontColor: white },
+			label: { font: Grenze30, fontColor: white },
 			background: default-pane, wrapWidth: 150
 		}
 	},

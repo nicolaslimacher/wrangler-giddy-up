@@ -1,7 +1,7 @@
 android {
     signingConfigs {
         debug {
-            storeFile file('C:\\Users\\nicolas.limacher\\.android\\debug.keystore')
+            storeFile file('C:/Users/nicolas.limacher/.android/debug.keystore')
             storePassword 'NL4224$Kt'
             keyAlias 'androiddebugkey'
             keyPassword 'NL4224$Kt'
@@ -17,7 +17,6 @@ android {
             aidl.srcDirs = ['src']
             renderscript.srcDirs = ['src']
             res.srcDirs = ['res']
-            assets.srcDirs = ['../assets']
             jniLibs.srcDirs = ['libs']
         }
 

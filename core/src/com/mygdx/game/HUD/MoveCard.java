@@ -16,6 +16,7 @@ import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.Align;
+import com.github.tommyettinger.textra.TextraLabel;
 import com.mygdx.game.Manager.BattleManager;
 import com.mygdx.game.MoveSets.MoveSet;
 import com.mygdx.game.Utils.Helpers;
@@ -26,7 +27,7 @@ public class MoveCard extends Actor {
     public BattleManager battleManager;
     private boolean selectable;
     TextureRegion textureRegion;
-    Label moveSymbolLabel, moveNameLabel;
+    TextraLabel moveSymbolLabel,moveNameLabel;
     Skin moveSelectSkin = Helpers.getGameSkin();
 
     public MoveCard(MoveSet moveSet, BattleManager battleManager, boolean selectable, float x, float y) {
@@ -38,13 +39,13 @@ public class MoveCard extends Actor {
         Gdx.app.log("MoveCard", "MoveCard created, name: " + this.moveSet.name + ", selectable? : " + this.selectable + ", position: " + this.getX() + "," + this.getY());
 
         //create text labels
-        moveSymbolLabel = new Label(moveSet.symbol, moveSelectSkin, "moveCardSelect");
-        moveSymbolLabel.setFontScale(0.65f);
+        moveSymbolLabel = new TextraLabel(moveSet.symbol, moveSelectSkin, "moveCardSelect");
+        //moveSymbolLabel.setFontScale(0.65f);
         moveSymbolLabel.setDebug(true);
         moveSymbolLabel.setAlignment(Align.center);
 
-        moveNameLabel = new Label(moveSet.name, moveSelectSkin, "moveCardSelect");
-        moveNameLabel.setFontScale(0.40f);
+        moveNameLabel = new TextraLabel("[WHITE]" + moveSet.name, moveSelectSkin, "moveCardSelect");
+        //moveNameLabel.setFontScale(0.40f);
         moveNameLabel.setDebug(true);
         moveNameLabel.setAlignment(Align.left);
 

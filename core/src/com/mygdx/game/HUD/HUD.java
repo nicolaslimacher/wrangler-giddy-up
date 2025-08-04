@@ -5,13 +5,13 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
-import com.badlogic.gdx.scenes.scene2d.Touchable;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.github.tommyettinger.textra.FWSkin;
+import com.github.tommyettinger.textra.TextraButton;
 import com.mygdx.game.Manager.BattleManager;
 import com.mygdx.game.Utils.Constants;
 import com.mygdx.game.Utils.Helpers;
@@ -22,19 +22,20 @@ public class HUD implements Disposable {
     private BattleManager battleManager;
 
     //Scene2D Widgets
-    Skin skin = Helpers.getGameSkin();
-    private final TextButton seedDisplau;
-    private TextButton undoButton, endTurn;
+    FWSkin skin = Helpers.getGameSkin();
+    private final TextButton seedDisplay;
+    private TextButton undoButton;
+    private TextraButton endTurn;
 
     public HUD(SpriteBatch spriteBatch, BattleManager battleManager) {
         Gdx.app.log("HUD", "Creating HUD");
         viewport = new FitViewport(Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT, new OrthographicCamera());
         customHUDStage = new CustomHUDStage(viewport, spriteBatch, battleManager);
 
-        seedDisplau = new TextButton("Seed: " + Helpers.getPRNGManager().getOriginalSeed(), skin);
-        seedDisplau.setBounds(Constants.SCREEN_WIDTH - 350 , Constants.SCREEN_HEIGHT-40, 335, 35);
-        seedDisplau.setName("TurnCounterMenu");
-        customHUDStage.addActor(seedDisplau);
+        seedDisplay = new TextButton("Seed: " + Helpers.getPRNGManager().getOriginalSeed(), skin);
+        seedDisplay.setBounds(Constants.SCREEN_WIDTH - 350 , Constants.SCREEN_HEIGHT-40, 335, 35);
+        seedDisplay.setName("TurnCounterMenu");
+        customHUDStage.addActor(seedDisplay);
 
         Table table = new Table();
 
@@ -43,7 +44,7 @@ public class HUD implements Disposable {
         table.add(undoButton).expand().fill();
         DisableUndoButton(); //battle manager will enable when move command has been made
 
-        this.endTurn = new TextButton("END TURN", skin);
+        this.endTurn = new TextraButton("END TURN", skin);
         endTurn.addListener(endTurnButtonListener);
         table.add(endTurn).expand().fill();
         DisableEndTurnButton(); //battle manager will enable when move command has been made
@@ -82,7 +83,7 @@ public class HUD implements Disposable {
     }
 
     public void UpdateTurn (){
-        //this.seedDisplau.setText("Turn: " + Helpers.getCurrentBattleManager().turnNumber);
+        //this.seedDisplay.setText("Turn: " + Helpers.getCurrentBattleManager().turnNumber);
     }
     public void EnableUndoButton(){
         Gdx.app.debug("HUD", "Undo button enabled");

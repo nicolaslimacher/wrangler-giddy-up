@@ -2,19 +2,18 @@ package com.mygdx.game.Screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.ui.TextField;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.ScreenUtils;
+import com.github.tommyettinger.textra.FWSkin;
 import com.mygdx.game.Utils.Constants;
 import com.mygdx.game.WranglerGiddyUp;
 import com.mygdx.game.Utils.Helpers;
@@ -25,7 +24,7 @@ public class CharacterSelectScreen implements Screen{
     final WranglerGiddyUp game;
     SpriteBatch batch;
     Stage stage;
-    Skin skin = Helpers.getGameSkin();
+    FWSkin skin = Helpers.getGameSkin();
     private final TextureRegion starryBackground;
 
     Table buttons, seedTable;
@@ -41,7 +40,7 @@ public class CharacterSelectScreen implements Screen{
         this.stage = stage;
         Gdx.input.setInputProcessor(stage);
 
-        starryBackground = game.getResourceManager().get("texturePacks/battleTextures.atlas", TextureAtlas.class).findRegion("starrybackground");
+        starryBackground = game.getAssetManager().get("texturePacks/battleTextures.atlas", TextureAtlas.class).findRegion("starrybackground");
 
         batch = new SpriteBatch();
 

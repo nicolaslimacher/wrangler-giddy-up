@@ -5,7 +5,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -32,7 +31,7 @@ public class MainMenuScreen implements Screen{
 
         loadingScreen = new TextureRegion(new Texture(Gdx.files.internal("loading_screen.png")));
 
-        game.getResourceManager().load("texturePacks/battleTextures.atlas", TextureAtlas.class);
+        game.getAssetManager().load("texturePacks/battleTextures.atlas", TextureAtlas.class);
         Gdx.app.log("MainMenu", "Game Started");
     }
 
@@ -58,7 +57,7 @@ public class MainMenuScreen implements Screen{
         batch.end();
 
         //only true if resource manager finishes loading async assets
-        if(game.getResourceManager().update()) {
+        if(game.getAssetManager().update()) {
             if (Gdx.input.isTouched()) {
                 //game.setScreen(new BattleScreen(game, game.stage));
                 game.setScreen(new CharacterSelectScreen(game, game.stage));

@@ -113,7 +113,7 @@ public class BattleManager extends Actor{
     }
 
     public AssetManager GetAssetManager(){
-        return battleScreen.GetGame().getResourceManager();
+        return battleScreen.GetGame().getAssetManager();
     }
 
     private boolean PlayerHasAValidMove(){

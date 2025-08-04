@@ -12,19 +12,18 @@ import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.DragAndDrop;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.JsonReader;
 import com.badlogic.gdx.utils.JsonValue;
+import com.github.tommyettinger.textra.FWSkin;
 import com.mygdx.game.Actions.HoverInPlaceAction;
 import com.mygdx.game.Actions.MoveActionFactory;
 import com.mygdx.game.Board.Board;
 import com.mygdx.game.Command.Command;
 import com.mygdx.game.Command.CommandType;
 import com.mygdx.game.Components.AbilityComponent;
-import com.mygdx.game.HUD.TTFSkin;
 import com.mygdx.game.Manager.BattleManager;
 import com.mygdx.game.Manager.MoveManager;
 import com.mygdx.game.Manager.Team;
@@ -66,7 +65,7 @@ public class GamePiece extends Actor {
     public float preDragXPosition;
     public float preDragYPosition;
 
-    Skin skin = Helpers.getGameSkin();
+    FWSkin skin = Helpers.getGameSkin();
 
     public GamePiece(Board board, BattleManager battleManager, int gamePieceID, IntPair coordinates, Team team, boolean isKing, int health, int attack) {
         //metadata

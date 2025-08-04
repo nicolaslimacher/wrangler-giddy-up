@@ -12,6 +12,7 @@ import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
 import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.github.tommyettinger.textra.FWSkin;
 import com.mygdx.game.GamePiece.GamePiece;
 import com.mygdx.game.HUD.TTFSkin;
 import com.mygdx.game.Utils.Constants;
@@ -20,7 +21,7 @@ import com.mygdx.game.Utils.Helpers;
 public class DisplayMessage extends Table {
     private static final String TAG = DisplayMessage.class.getSimpleName();
     Label headerDisplay, subDisplay;
-    TTFSkin ttfSkin = Helpers.getGameSkin();
+    FWSkin ttfSkin = Helpers.getGameSkin();
 
     public DisplayMessage(BattleManager battleManager, String headerMessage, String subMessage, float displayTime) {
         super();

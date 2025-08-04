@@ -12,7 +12,7 @@ public class DesktopLauncher {
 		config.useVsync(true);
 		//config.setResizable(false);
 		config.setForegroundFPS(60);
-		config.setTitle("galactic-chess");
+		config.setTitle("Wrangler Giddy Up");
 		new Lwjgl3Application(new WranglerGiddyUp(), config);
 	}
 }

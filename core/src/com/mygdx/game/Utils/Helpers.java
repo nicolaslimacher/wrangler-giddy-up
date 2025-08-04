@@ -1,13 +1,13 @@
 package com.mygdx.game.Utils;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
-import com.mygdx.game.HUD.TTFSkin;
+import com.github.tommyettinger.textra.FWSkin;
 import com.mygdx.game.Manager.BattleManager;
 import com.mygdx.game.Manager.PRNGManager;
-import com.mygdx.game.Manager.ResourceManager;
 import com.mygdx.game.Screens.BattleScreen;
 import com.mygdx.game.WranglerGiddyUp;
 
@@ -60,16 +60,16 @@ public class Helpers {
         return ((WranglerGiddyUp) Gdx.app.getApplicationListener()).getPrngManager();
     }
 
-    public static ResourceManager getResourceManager(){
+    public static AssetManager getAssetManager(){
         Gdx.app.debug(TAG, "Getting PRNG Manager");
-        return ((WranglerGiddyUp) Gdx.app.getApplicationListener()).getResourceManager();
+        return ((WranglerGiddyUp) Gdx.app.getApplicationListener()).getAssetManager();
     }
 
     public static TextureRegion getTextureRegionFromTextureAtlas(String textureName){
-        return ((WranglerGiddyUp) Gdx.app.getApplicationListener()).getResourceManager().get("texturePacks/battleTextures.atlas", TextureAtlas.class).findRegion(textureName);
+        return ((WranglerGiddyUp) Gdx.app.getApplicationListener()).getAssetManager().get("texturePacks/battleTextures.atlas", TextureAtlas.class).findRegion(textureName);
     }
 
-    public static TTFSkin getGameSkin(){
+    public static FWSkin getGameSkin(){
         return ((WranglerGiddyUp) Gdx.app.getApplicationListener()).getSkin();
     }
 
